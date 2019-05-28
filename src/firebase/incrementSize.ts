@@ -13,7 +13,7 @@ export default async function incrementSize(): Promise<void> {
 
     const doc = await melonpanice.get();
     const { x } = doc.data()!;
-    if (x > 120) {
+    if (x > 100) {
       debounce(async () => {
       await melonpanice.update({
         x: 10,

@@ -26,7 +26,7 @@ const MelonpanIce = () => {
   // よく考えたらXとYを持つ必要なかった。
   const { x } = size;
 
-  if (x > 120) {
+  if (x > 100) {
     return <Heading1>爆発</Heading1>;
   }
   
