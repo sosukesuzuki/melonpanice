@@ -1,15 +1,15 @@
 import React from "react";
+import { useSize } from "../firebase/hooks/melonpanice";
 
-type Props = {
-  width: number;
-  height: number;
-}
+const MelonpanIce: React.FC = () => {
+  const size = useSize();
 
-const MelonpanIce: React.FC<Props> = ({
-  width, height
-}) => {
+  if (size === null) return null;
+
+  const { x, y } = size;
+  
   return (
-    <img width={width} height={height} src="./assets/logo.svg" />
+    <img width={x} height={y} src="./assets/logo.svg" />
   )
 }
 

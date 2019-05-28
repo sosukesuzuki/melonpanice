@@ -28,8 +28,8 @@ export function useExplosionCount(): number | null {
 
   useEffect(() => {
     const unsubscribe = melonpanice.onSnapshot(doc => {
-      const { explosion_countt } = doc.data()!;
-      setCount(explosion_countt);
+      const { explosion_count } = doc.data()!;
+      setCount(explosion_count);
     })
 
     return () => {

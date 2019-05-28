@@ -1,10 +1,16 @@
 import React from "react";
 import MelonpanIce from "./MelonpanIce";
+import { useExplosionCount } from "../firebase/hooks/melonpanice";
 
 const App = () => {
+  const count = useExplosionCount();
+
+  if (count === null) return null;
+
   return (
     <main>
-      <MelonpanIce width={500} height={500} />
+      <h1>{count}</h1>
+      <MelonpanIce />
     </main>
   )
 }
