@@ -30,7 +30,7 @@ const MelonpanIce = () => {
     return <Heading1>爆発</Heading1>;
   }
 
-  return <Img size={x} src="./assets/logo.png" onClick={incrementSize} />;
+  return <Img size={x} src="./logo.png" onClick={incrementSize} />;
 };
 
 export default MelonpanIce;
