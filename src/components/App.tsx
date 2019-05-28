@@ -16,6 +16,7 @@ const Main = styled.main`
   justify-content: center;
   flex-flow: column;
   height: 100vh;
+  touch-action: manipulation;
 `;
 
 const App = () => {
