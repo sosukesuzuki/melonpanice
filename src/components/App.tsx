@@ -4,8 +4,7 @@ import MelonpanIce from "./MelonpanIce";
 const App = () => {
   return (
     <main>
-      <h1>Heading1</h1>
-      <MelonpanIce width={100} height={200} />
+      <MelonpanIce width={500} height={500} />
     </main>
   )
 }
