@@ -31,7 +31,7 @@ const MelonpanIce = () => {
   }
   
   return (
-    <Img size={x} src="./assets/logo.svg" onClick={incrementSize} />
+    <Img size={x} src="./assets/logo.png" onClick={incrementSize} />
   )
 }
 
