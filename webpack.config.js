@@ -21,10 +21,10 @@ function createPlugins() {
     ? common.concat(new Dotenv())
     : common.concat(
         new webpack.EnvironmentPlugin(
-          ["FIREBASE_API_KEY"],
-          ["FIREBASE_AUTH_DOMAIN"],
-          ["FIREBASE_DATABASE_URL"],
-          ["FIREBASE_PROJECT_ID"]
+          ["FIREBASE_API_KEY",
+          "FIREBASE_AUTH_DOMAIN",
+          "FIREBASE_DATABASE_URL",
+          "FIREBASE_PROJECT_ID"]
         )
       );
 }
