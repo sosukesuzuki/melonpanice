@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@types/firebase": "^3.2.1",
+    "@types/lodash.debounce": "^4.0.6",
     "@types/react": "^16.8.18",
     "@types/react-dom": "^16.8.4",
     "@types/styled-components": "^4.1.15",
@@ -28,6 +29,7 @@
   },
   "dependencies": {
     "firebase": "^6.0.4",
+    "lodash.debounce": "^4.0.8",
     "normalize.css": "^8.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
