@@ -1,13 +1,12 @@
 import React from "react";
-import styled from "styled-components";
-
-const Heading1 = styled.h1`
-  color: red;
-`;
+import MelonpanIce from "./MelonpanIce";
 
 const App = () => {
   return (
-    <Heading1>メロンパンアイス、美味しい！w</Heading1>
+    <main>
+      <h1>Heading1</h1>
+      <MelonpanIce width={100} height={200} />
+    </main>
   )
 }
 
