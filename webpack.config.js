@@ -52,8 +52,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new CopyPlugin(copyRules),
-    new Dotenv()
-  ]
-}
+  plugins: [new CopyPlugin(copyRules), new Dotenv()]
+};

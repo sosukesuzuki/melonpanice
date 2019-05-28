@@ -13,11 +13,11 @@ export function useSize(): Size | null {
     const unsubscribe = melonpanice.onSnapshot(doc => {
       const { x, y } = doc.data()!;
       setSize({ x, y });
-    })
+    });
 
     return () => {
       unsubscribe();
-    }
+    };
   }, []);
 
   return size;
@@ -30,12 +30,12 @@ export function useExplosionCount(): number | null {
     const unsubscribe = melonpanice.onSnapshot(doc => {
       const { explosion_count } = doc.data()!;
       setCount(explosion_count);
-    })
+    });
 
     return () => {
       unsubscribe();
-    }
-  }, [])
+    };
+  }, []);
 
   return count;
 }

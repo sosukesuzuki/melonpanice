@@ -30,10 +30,11 @@ const App = () => {
       </Main>
       <Heading1>
         現在の爆発数: {count}
-        <br/>メロンパンはタップする。
+        <br />
+        メロンパンはタップする。
       </Heading1>
     </>
-  )
-}
+  );
+};
 
 export default App;

@@ -6,7 +6,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack",
+    "format": "prettier --write \"{,src/**/}*.{ts,tsx,html,md,js,json}\"",
+    "lint": "eslint src --ext .ts --ext .tsx"
   },
   "devDependencies": {
     "@types/firebase": "^3.2.1",

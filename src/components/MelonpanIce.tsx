@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useSize } from "../firebase/hooks/melonpanice";
-import incrementSize from '../firebase/incrementSize';
+import incrementSize from "../firebase/incrementSize";
 
 type ImgProps = {
   size: number;
@@ -29,10 +29,8 @@ const MelonpanIce = () => {
   if (x > 100) {
     return <Heading1>爆発</Heading1>;
   }
-  
-  return (
-    <Img size={x} src="./assets/logo.png" onClick={incrementSize} />
-  )
-}
+
+  return <Img size={x} src="./assets/logo.png" onClick={incrementSize} />;
+};
 
 export default MelonpanIce;
