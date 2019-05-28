@@ -15,6 +15,20 @@ const copyRules = [
   }
 ];
 
+function createPlugins() {
+  const common = [new CopyPlugin(copyRules)];
+  return DEV
+    ? common.concat(new Dotenv())
+    : common.concat(
+        new webpack.EnvironmentPlugin(
+          ["FIREBASE_API_KEY"],
+          ["FIREBASE_AUTH_DOMAIN"],
+          ["FIREBASE_DATABASE_URL"],
+          ["FIREBASE_PROJECT_ID"]
+        )
+      );
+}
+
 module.exports = {
   mode: MODE,
   devtool: DEV ? "inline-source-map" : "source-map",
@@ -52,5 +66,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [new CopyPlugin(copyRules), new Dotenv()]
+  plugins: createPlugins()
 };
