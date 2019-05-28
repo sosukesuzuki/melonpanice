@@ -10,6 +10,7 @@ type ImgProps = {
 const Img = styled.img`
   width: ${(props: ImgProps) => `${props.size}vw`};
   height: ${(props: ImgProps) => `${props.size}vw`};
+  margin: 0 auto;
 `;
 
 const MelonpanIce = () => {

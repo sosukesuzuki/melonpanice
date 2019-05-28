@@ -1,6 +1,14 @@
 import React from "react";
+import styled from "styled-components";
 import MelonpanIce from "./MelonpanIce";
 import { useExplosionCount } from "../firebase/hooks/melonpanice";
+
+const Main = styled.main`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+`;
 
 const App = () => {
   const count = useExplosionCount();
@@ -8,10 +16,9 @@ const App = () => {
   if (count === null) return null;
 
   return (
-    <main>
-      <h1>{count}</h1>
+    <Main>
       <MelonpanIce />
-    </main>
+    </Main>
   )
 }
 
