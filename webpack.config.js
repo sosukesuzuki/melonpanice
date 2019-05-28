@@ -1,8 +1,9 @@
+const webpack = require("webpack");
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 const MODE = process.env.NODE_ENV || "development";
-const DEV = MODE == "development";
+const DEV = MODE === "development";
 
 const copyRules = [
   {
@@ -20,12 +21,12 @@ function createPlugins() {
   return DEV
     ? common.concat(new Dotenv())
     : common.concat(
-        new webpack.EnvironmentPlugin(
-          ["FIREBASE_API_KEY",
+        new webpack.EnvironmentPlugin([
+          "FIREBASE_API_KEY",
           "FIREBASE_AUTH_DOMAIN",
           "FIREBASE_DATABASE_URL",
-          "FIREBASE_PROJECT_ID"]
-        )
+          "FIREBASE_PROJECT_ID"
+        ])
       );
 }
 

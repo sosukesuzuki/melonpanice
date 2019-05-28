@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack",
+    "build": "cross-env NODE_ENV=production webpack",
     "format": "prettier --write \"{,src/**/}*.{ts,tsx,html,md,js,json}\"",
     "lint": "eslint src --ext .ts --ext .tsx"
   },
@@ -17,6 +17,7 @@
     "@types/react-dom": "^16.8.4",
     "@types/styled-components": "^4.1.15",
     "copy-webpack-plugin": "^5.0.3",
+    "cross-env": "^5.2.0",
     "dotenv-webpack": "^1.7.0",
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.1.0",
