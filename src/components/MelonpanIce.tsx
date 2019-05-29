@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useSize } from "../firebase/hooks/melonpanice";
 import incrementSize from "../firebase/incrementSize";
@@ -25,6 +25,14 @@ type Props = {
 const MelonpanIce: React.FC<Props> = ({ incrementCount }) => {
   const size = useSize();
 
+  useEffect(() => {
+    if (size === null) return;
+    const { x } = size;
+    if (x > 100) {
+      incrementCount();
+    }
+  }, [size])
+
   if (size === null) return null;
 
   // よく考えたらXとYを持つ必要なかった。
@@ -35,9 +43,6 @@ const MelonpanIce: React.FC<Props> = ({ incrementCount }) => {
   }
 
   return <Img size={x} src="./logo.png" onClick={async () => {
-    if (x === 99) {
-      incrementCount();
-    }
     incrementSize();
   }} />;
 };
