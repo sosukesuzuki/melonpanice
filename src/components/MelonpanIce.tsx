@@ -28,7 +28,7 @@ const MelonpanIce: React.FC<Props> = ({ incrementCount }) => {
   useEffect(() => {
     if (size === null) return;
     const { x } = size;
-    if (x > 100) {
+    if (x === 100) {
       incrementCount();
     }
   }, [size])
