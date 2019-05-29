@@ -23,6 +23,23 @@ export function useSize(): Size | null {
   return size;
 }
 
+export function useInitialExplosionCount(): number {
+  const [count, setCount] = useState<number>(0);
+
+  useEffect(() => {
+    melonpanice.get().then(doc => {
+      const data = doc.data();
+      if (data === undefined) {
+        throw new Error("Data does not exist");
+      }
+      const { explosion_count } = data;
+      setCount(explosion_count)
+    })
+  }, []);
+
+  return count;
+}
+
 export function useExplosionCount(): number | null {
   const [count, setCount] = useState<number | null>(null);
 

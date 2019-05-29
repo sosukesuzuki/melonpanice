@@ -18,7 +18,11 @@ const Heading1 = styled.h1`
   color: red;
 `;
 
-const MelonpanIce = () => {
+type Props = {
+  incrementCount: () => void;
+}
+
+const MelonpanIce: React.FC<Props> = ({ incrementCount }) => {
   const size = useSize();
 
   if (size === null) return null;
@@ -30,7 +34,12 @@ const MelonpanIce = () => {
     return <Heading1>爆発</Heading1>;
   }
 
-  return <Img size={x} src="./logo.png" onClick={incrementSize} />;
+  return <Img size={x} src="./logo.png" onClick={async () => {
+    if (x === 99) {
+      incrementCount();
+    }
+    incrementSize();
+  }} />;
 };
 
-export default MelonpanIce;
+export default React.memo(MelonpanIce);

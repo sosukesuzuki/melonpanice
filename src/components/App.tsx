@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import styled from "styled-components";
 import MelonpanIce from "./MelonpanIce";
-import { useExplosionCount } from "../firebase/hooks/melonpanice";
+import { useInitialExplosionCount } from "../firebase/hooks/melonpanice";
 
 const Heading1 = styled.h1`
   position: fixed;
@@ -20,14 +20,23 @@ const Main = styled.main`
 `;
 
 const App = () => {
-  const count = useExplosionCount();
+  const initialCount = useInitialExplosionCount();
+  const [count, setCount] = useState(initialCount);
+
+  useEffect(() => {
+    setCount(initialCount);
+  }, [initialCount]);
+
+  const incrementCount = useCallback(() => {
+    setCount(count + 1);
+  }, [count]);
 
   if (count === null) return null;
 
   return (
     <>
       <Main>
-        <MelonpanIce />
+        <MelonpanIce incrementCount={incrementCount} />
       </Main>
       <Heading1>
         現在の爆発数: {count}
